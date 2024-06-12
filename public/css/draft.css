@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(63, 63, 63);
+    position: relative;
+    transition: background-image 0.3s ease;
+    background-image: url('https://cloudfront-us-east-1.images.arcpublishing.com/metroworldnews/S4DANOXEMRGVHIGGV3PREZSCGE.jpg');
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgb(196, 196, 196); */
+}
+
+.default{
+    width: 100vw;
+    height: 60vh;
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.champ-select{
+    width: 45vw;
+    height: 70%;
+    /* background-color: black; */
+    overflow: auto;
+}
+
+.champ-select::-webkit-scrollbar {
+    width: 5px; /* Largura da barra de rolagem vertical */
+    height: 5px; /* Altura da barra de rolagem horizontal */
+}
+
+.draft{
+    width: 100vw;
+    height: 40vh;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 200;
+}
+
+.draft-header{
+    width: 100vw;
+    height: 10%;
+    /* background-color: rgb(19, 230, 36); */
+}
+
+.draft-picks{
+    width: 92vw;
+    height: 60%;
+    background-color: black;
+    display: flex;
+}
+
+.draft-bans{
+    width: 100vw;
+    height: 30%;
+    /* background-color: rgb(20, 145, 68); */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.blue-side{
+    width: 39%;
+    height: 100%;
+    display: flex;
+}
+
+.red-side{
+    width: 39%;
+    height: 100%;
+    display: flex;
+}
+
+.blue-side-ban{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    /* background-color: darkblue; */
+    /* justify-content: space-around; */
+}
+
+.red-side-ban{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    /* background-color: rgb(132, 35, 141); */
+    /* justify-content: space-around; */
+}
+
+.temporizador{
+    width: 22%;
+    height: 100%;
+    background-color: black;
+    text-align: center;
+    color:white;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.temporizador-ban{
+    width: 15%;
+    height: 100%;
+    /* background-color: black; */
+}
+
+.champ-selecao{
+    width: 20%;
+    height: 99%;
+    border: 1px solid black;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.blue{
+    background-color: rgb(56, 70, 107);
+}
+
+.red{
+    background-color: rgb(138, 62, 62);
+}
+
+.champ-icon{
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+    border: 1px solid black;
+}
+
+.champ-icon:hover{
+    cursor: pointer;
+    border: 1px solid rgb(184, 183, 181);
+    /* border: inset 0 0 0 5px rgb(226, 247, 39); */
+}
+
+.champ-selecionado{
+    border: 1px solid goldenrod; 
+}
+
+.disabled {
+    opacity: 0.1;
+    cursor: not-allowed;
+}
+.selected {
+    border: 2px solid red;
+}
+
+.champ-ban{
+    width: 15%;
+    height: 80%;
+    background-color: rgb(44, 42, 42);
+    border: solid 1px rgb(0, 0, 0);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+}
+
+.piscando {
+    border: 1px solid black;
+    animation: bordaPiscar 1.7s infinite;
+
+}
+
+@keyframes bordaPiscar {
+    0%, 100% {
+        border-color: black;
+    }
+    50% {
+        border-color: #9e9e9e; /* Cor da borda quando "acesa" */
+    }
+
+}
+
+.modal-body{
+    height: 60vh;
+    background-color: black;
+}

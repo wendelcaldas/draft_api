@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(230, 230, 230);
+}
+
+body{
+    display: flex;
+}
+
+.barra-lateral{
+    width: 20vw;
+    height: 100vh;
+    background-color: white;
+}
+.main{
+    width: 80vw;
+    height: 100vh;
+    background-color: blue;
+}
+
+.barra-direita{
+    width: 20vw;
+    height: 100vh;
+    background-color: gray;
+}
