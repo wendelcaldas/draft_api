@@ -17,14 +17,14 @@ class CreateCampeaoTable extends Migration
             $table->id(); // Coluna 'id' auto-incrementada
             $table->string('id_champ');  // Define 'id_champ' como a chave primária
             $table->string('nome');
-            $table->string('rota1')->nullable();
-            $table->string('rota2')->nullable();
-            $table->string('forte1')->nullable();
-            $table->string('forte2')->nullable();
-            $table->string('forte3')->nullable();
-            $table->string('fraco1')->nullable();
-            $table->string('fraco2')->nullable();
-            $table->string('fraco3')->nullable();
+            $table->string('classe');
+            $table->string('rota1');
+            $table->string('rota2');
+            $table->string('poke');
+            $table->string('pickoff');
+            $table->string('engage');
+            $table->string('protect');
+            $table->string('split');
             $table->timestamps();
         });
     }

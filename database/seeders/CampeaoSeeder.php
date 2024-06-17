@@ -14,127 +14,36 @@ class CampeaoSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('campeao')->insert([
-            [
-                'id_champ' => 'Aatrox',
-                'nome' => 'Aatrox',
-                'rota1' => 'Top',
-                'rota2' => 'Mid',
-                'forte1' => 'Ramus',
-                'forte2' => 'Ryze',
-                'forte3' => 'Smolder',
-                'fraco1' => 'Singed',
-                'fraco2' => 'Udyr',
-                'fraco3' => 'Kennen'
-            ],
-            [
-                'id_champ' => 'Ahri',
-                'nome' => 'Ahri',
-                'rota1' => 'Mid',
-                'rota2' => null,
-                'forte1' => 'Talon',
-                'forte2' => 'Zed',
-                'forte3' => 'Yasuo',
-                'fraco1' => 'Malzahar',
-                'fraco2' => 'LeBlanc',
-                'fraco3' => 'Fizz'
-            ],
-            [
-                'id_champ' => 'Akali',
-                'nome' => 'Akali',
-                'rota1' => 'Top',
-                'rota2' => 'Mid',
-                'forte1' => 'Kennen',
-                'forte2' => 'Fiora',
-                'forte3' => 'Riven',
-                'fraco1' => 'Malphite',
-                'fraco2' => 'Nasus',
-                'fraco3' => 'Darius'
-            ],
-            [
-                'id_champ' => 'Annie',
-                'nome' => 'Annie',
-                'rota1' => 'Mid',
-                'rota2' => null,
-                'forte1' => 'Talon',
-                'forte2' => 'Yasuo',
-                'forte3' => 'Fizz',
-                'fraco1' => 'Zed',
-                'fraco2' => 'LeBlanc',
-                'fraco3' => 'Akali'
-            ],
-            [
-                'id_champ' => 'Ashe',
-                'nome' => 'Ashe',
-                'rota1' => 'ADC',
-                'rota2' => null,
-                'forte1' => 'Jhin',
-                'forte2' => 'Miss Fortune',
-                'forte3' => 'Ezreal',
-                'fraco1' => 'Draven',
-                'fraco2' => 'Kai\'Sa',
-                'fraco3' => 'Tristana'
-            ],
-            [
-                'id_champ' => 'AurelionSol',
-                'nome' => 'Aurelion Sol',
-                'rota1' => 'Mid',
-                'rota2' => null,
-                'forte1' => 'Kassadin',
-                'forte2' => 'Fizz',
-                'forte3' => 'Zed',
-                'fraco1' => 'Zoe',
-                'fraco2' => 'Veigar',
-                'fraco3' => 'Syndra'
-            ],
-            [
-                'id_champ' => 'Blitzcrank',
-                'nome' => 'Blitzcrank',
-                'rota1' => 'Suporte',
-                'rota2' => null,
-                'forte1' => 'Leona',
-                'forte2' => 'Thresh',
-                'forte3' => 'Nautilus',
-                'fraco1' => 'Sona',
-                'fraco2' => 'Nami',
-                'fraco3' => 'Lulu'
-            ],
-            [
-                'id_champ' => 'Brand',
-                'nome' => 'Brand',
-                'rota1' => 'Mid',
-                'rota2' => 'Suporte',
-                'forte1' => 'Leona',
-                'forte2' => 'Thresh',
-                'forte3' => 'Nautilus',
-                'fraco1' => 'Sona',
-                'fraco2' => 'Nami',
-                'fraco3' => 'Lulu'
-            ],
-            [
-                'id_champ' => 'Braum',
-                'nome' => 'Braum',
-                'rota1' => 'Suporte',
-                'rota2' => null,
-                'forte1' => 'Leona',
-                'forte2' => 'Thresh',
-                'forte3' => 'Nautilus',
-                'fraco1' => 'Sona',
-                'fraco2' => 'Nami',
-                'fraco3' => 'Lulu'
-            ],
-            [
-                'id_champ' => 'Caitlyn',
-                'nome' => 'Caitlyn',
-                'rota1' => 'ADC',
-                'rota2' => null,
-                'forte1' => 'Jhin',
-                'forte2' => 'Miss Fortune',
-                'forte3' => 'Ezreal',
-                'fraco1' => 'Draven',
-                'fraco2' => 'Kai\'Sa',
-                'fraco3' => 'Tristana'
-            ]
-        ]);
+        $champions = [
+            'Aatrox','Ahri','Akali','Akshan','Alistar','Amumu','Anivia','Annie','Aphelios','Ashe','AurelionSol','Azir','Bard','Belveth','Blitzcrank','Brand','Braum','Briar','Caitlyn','Camille','Cassiopeia','Chogath','Corki','Darius','Diana','Draven','DrMundo','Ekko','Elise','Evelynn','Ezreal','Fiddlesticks','Fiora','Fizz','Galio','Gangplank','Garen','Gnar','Gragas','Graves','Gwen','Hecarim','Heimerdinger','Hwei','Illaoi','Irelia','Ivern','Janna','JarvanIV','Jax','Jayce','Jhin','Jinx','Kaisa','Kalista','Karma','Karthus','Kassadin','Katarina','Kayle','Kayn','Kennen','Khazix','Kindred','Kled','KogMaw','KSante','Leblanc','LeeSin','Leona','Lillia','Lissandra','Lucian','Lulu','Lux','Malphite','Malzahar','Maokai','MasterYi','Milio','MissFortune','MonkeyKing','Mordekaiser','Morgana','Naafiri','Nami','Nasus','Nautilus','Neeko','Nidalee','Nilah','Nocturne','Nunu','Olaf','Orianna','Ornn','Pantheon','Poppy','Pyke','Qiyana','Quinn','Rakan','Rammus','RekSai','Rell','Renata','Renekton','Rengar','Riven','Rumble','Ryze','Samira','Sejuani','Senna','Seraphine','Sett','Shaco','Shen','Shyvana','Singed','Sion','Sivir','Skarner','Smolder','Sona','Soraka','Swain','Sylas','Syndra','TahmKench','Taliyah','Talon','Taric','Teemo','Thresh','Tristana','Trundle','Tryndamere','TwistedFate','Twitch','Udyr','Urgot','Varus','Vayne','Veigar','Velkoz','Vex','Vi','Viego','Viktor','Vladimir','Volibear','Warwick','Xayah','Xerath','XinZhao','Yasuo','Yone','Yorick','Yuumi','Zac','Zed','Zeri','Ziggs','Zilean','Zoe','Zyra'
+            // Adicione mais campeões conforme necessário
+        ];
+
+        foreach ($champions as $champion) {
+            DB::table('campeao')->insert([
+                'id_champ' => $champion,
+                'nome' => $champion,
+                'classe' => $this->getRandomClass(),
+                'rota1' => $this->getRandomRota(),
+                'rota2' => $this->getRandomRota(),
+                'poke' => rand(0, 10),
+                'pickoff' => rand(0, 10),
+                'engage' => rand(0, 10),
+                'protect' => rand(0, 10),
+                'split' => rand(0, 10),
+            ]);
+        }
+    }
+
+    private function getRandomClass()
+    {
+        $classes = ['Assassino', 'Mago', 'Lutador', 'Tanque', 'Atirador', 'Encantaor'];
+        return $classes[array_rand($classes)];
+    }
+
+    private function getRandomRota()
+    {
+        $rotas = ['Top', 'Mid', 'Adc', 'Jungle', 'Sup'];
+        return $rotas[array_rand($rotas)];
     }
 }

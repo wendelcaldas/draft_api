@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DefaultController;
 use App\Http\Controllers\DraftController;
+use App\Http\Controllers\ChampionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,4 @@ Route::post('/ingame', [DraftController::class, 'calculaResultado'])->name('calc
 
 Route::get('/resultado', [DraftController::class, 'resultadoPartida'])->name('exibe.resultado');
 
-
+Route::get('/champion/{campeao?}', [ChampionController::class, 'index'])->name('campeao');

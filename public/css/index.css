@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: rgb(230, 230, 230); */
+}
+
+body{
+    display: flex;
+}
+
+.barra-lateral{
+    width: 20vw;
+    height: 100vh;
+    background-color: rgb(46, 46, 46);
+}
+.main{
+    width: 80vw;
+    height: 100vh;
+    background-color: blue;
+    /* background-image: url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nidalee_0.jpg'); */
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Altere conforme necessário */
+}
+
+.barra-direita{
+    width: 20vw;
+    height: 100vh;
+    background-color: gray;
+}
+
+/* .container {
+
+} */
+
+.background-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0);
+    z-index: 1; /* Menor índice z para ficar atrás */
+}
+
+.overlay-div {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    color: #050505; /* Cor do texto */
+    z-index: 2; /* Maior índice z para ficar na frente */
+    background: linear-gradient(to top, rgb(0, 0, 0, 2), rgba(255, 255, 255, 0));
+    /* background-color: rgba(0, 0, 0); */
+}
+
+.titulo-champ{
+    /* width: 100%; */
+    height: 30%;
+    /* background-color: none; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteudo-champ{
+height: 60%;
+width: 90%;
+background-color: white;
+opacity: 0.5;
+border-radius: 10px;
+display: flex;
+}
+
+.nome-champ{
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    background-color: none;
+}
+
+.frase-champ{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    background-color: none;
+}
+
+.playstyle{
+    width: 50%;
+    height: 100%;
+    /* background-color: red; */
+}
+
+p{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}

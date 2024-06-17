@@ -293,9 +293,9 @@ $(document).ready(function() {
             // Event listener for confirm button
             $('#confirmar').click(function() {
                 // console.log(currentViewIndex)
-                // confirmImageSelection();
+                confirmImageSelection();
                 // console.log(currentViewIndex)
-                modalEndGame();
+                // modalEndGame();
 
             });
 
@@ -373,10 +373,8 @@ $(document).ready(function() {
                         data: data
                     },
                     success: function(response) {
-                        console.log(response);
-                        // Manipule a resposta aqui
-                        // window.location.href = response.redirect_url;
-                        modalEndGame();
+
+                        modalEndGame(response);
                     },
                     error: function(xhr, status, error) {
                         console.error(xhr.responseText);
@@ -389,9 +387,10 @@ $(document).ready(function() {
 
 // ******************************* teste nova versao ***********************************//
 
-    function modalEndGame() {
-        console.log('chamou a function')
+    function modalEndGame(response) {
+        console.log(response)
         $('#endGameModal').modal('show');
+        
     }
 
 </script>

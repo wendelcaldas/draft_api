@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Models\Time;
 use App\Models\Matchup;
+use App\Models\Composicao;
+use App\Models\Resultado;
+use App\Models\ResultadoMatch;
 
 class DraftController extends Controller
 {
@@ -50,44 +53,41 @@ class DraftController extends Controller
     {
         $dados = $request->all();
 
-        // Salve os dados na sessão
-        session(['dados' => $dados]);
-        return response()->json(['redirect_url' => route('exibe.resultado')]);
+        $time1 = new Composicao($dados['data'][0]);
+        $time2 = new Composicao($dados['data'][1]);
+
+        $matchUp = $this->analisaMatchUp($time1, $time2);
+
+        $resultado = ['TimeAzul' => $matchUp->getWinRateTimeAzul(), 'timeVermelho' => $matchUp->getWinRateTimeVermelho()];
+
+        return $resultado;
     }
 
-    public function resultadoPartida()
+    public function analisaMatchUp($time1, $time2)
     {
-        // Recupera os dados da sessão
-        $dados = session('dados');
-        $time1 = $dados['data'][0];
-        $time2 = $dados['data'][1];
+        $matchTop = Matchup::where('champ1', '=', $time1->getTop())
+                            ->where('champ2', '=', $time2->getTop())
+                            ->get();
 
-        $matchUp = [];
+        $matchJg = Matchup::where('champ1', '=', $time1->getJungler())
+                            ->where('champ2', '=', $time2->getJungler())
+                            ->get();
 
-        for ($i=0; $i < 5 ; $i++) { 
-            // var_dump($time1[$i] . 'x' . $time2[$i]);
-            $resultado = $this->simulaMatchUp($time1[$i], $time2[$i]);
-            
-            array_push($matchUp, $resultado);
-        };
+        $matchMid = Matchup::where('champ1', '=', $time1->getMid())
+                            ->where('champ2', '=', $time2->getMid())
+                            ->get();
 
-        // foreach ($matchUp as $match) {
-        //     dd($match[0]->champ1);
-        // }exit;
+        $matchAdc = Matchup::where('champ1', '=', $time1->getAdc())
+                            ->where('champ2', '=', $time2->getAdc())
+                            ->get();
 
-        // var_dump($time1[0]);exit;
-        // Passa os dados para a view
-        return view('resultado', compact('matchUp'));
-   }
+        $matchSup = Matchup::where('champ1', '=', $time1->getSup())
+                            ->where('champ2', '=', $time2->getSup())
+                            ->get();
 
-   public function simulaMatchUp($campeao1, $campeao2)
-   {
-        $matchups = Matchup::where('champ1', $campeao1)
-                           ->where('champ2', $campeao2)
-                           ->get();
+        $resultado = new ResultadoMatch();
+        $resultado->SetConteudo($matchTop[0], $matchJg[0], $matchMid[0], $matchAdc[0], $matchSup[0]);
 
-        // dd($matchups[0]->champ1);
-
-        return $matchups;
-   }
+        return $resultado;
+    }
 }
